@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" href="/addnewPage.css">
+</head>
+
+<body>
+    <div>
+        <h2 id="main-heading">[[${pageTitle}]]</h2>
+        <button class="logout-button" type="button" th:onclick="logout()">Logout</button>
+        <button id="homeButton" type="button" onclick="home()">Home</button>
+    </div>
+
+    <form th:action="@{/product/save}" method="post" th:object="${product}" style="max-width: 500px; margin: 0 auto;">
+        <div>
+            <div>
+                <label for="">Id:</label>
+                <div>
+                    <input type="text" th:field="*{id}"  maxlength="5" pattern="[0-9]*">
+                </div>
+            </div>
+            <!-- <input type="hidden" th:field=*{id}> -->
+
+            <div>
+                <label for="">Name:</label>
+                <div>
+                    <input type="text" th:field="*{name}" required minlength="3" maxlength="45">
+                </div>
+            </div>
+
+            <div>
+                <label for="">Price:</label>
+                <div>
+                    <input type="text" th:field="*{price}" required minlength="2" pattern="[0-9]*">
+                </div>
+            </div>
+
+            <div>
+                <label for="">Quantity:</label>
+                <div>
+                    <input type="text" th:field="*{quantity}" required  maxlength="3" 
+                    pattern="[0-9]*">
+                </div>
+            </div>
+
+            <div>
+                <label for="">BatchNo:</label>
+                <div>
+                    <input type="text" th:field="*{batchNo}" minlength="3" maxlength="10"
+                    pattern="[#][0-9]*">
+                </div>
+            </div>
+
+            <div>
+                <button id="submit-button" type="submit">Save</button>
+                <button id="cancel-button" type="button" th:onclick="cancelForm()">Cancel</button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" th:src="@{/myscript.js}"></script>
+<!-- <script>
+    function cancelForm(){
+        window.location= "[[@{/product}]]";
+    }
+</script> -->
+</body>
+
+</html>

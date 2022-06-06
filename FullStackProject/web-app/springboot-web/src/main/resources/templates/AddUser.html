@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" href="/addnewPage.css">
+</head>
+
+<body>
+    <div>
+        <h2 id="main-heading">[[${pageTitle}]]</h2>
+        <button class="logout-button" type="button" th:onclick="logout()">Logout</button>
+        <button id="homeButton" type="button" onclick="home()">Home</button>
+    </div>
+
+    <form th:action="@{/user/save}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto;">
+        <div>
+            <div>
+                <label for="">User Id:</label>
+                <div>
+                    <input type="text" th:field="*{userId}"  maxlength="5" pattern="[0-9]*">
+                </div>
+            </div>
+            <!-- <input type="hidden" th:field=*{id}> -->
+
+            <div>
+                <label for="">User Name:</label>
+                <div>
+                    <input type="text" th:field="*{username}" required minlength="3" maxlength="45">
+                </div>
+            </div>
+
+            <div>
+                <label for="">Email:</label>
+                <div>
+                    <input type="text" th:field="*{email}"  pattern="\w{3,}[@]\w{3,}[.]\w{2,}">
+                </div>
+            </div>
+
+            <div>
+                <label for="">Role:</label>
+                <div>
+                    <input type="text" th:field="*{role}" pattern="[a-zA-Z0-9]*">
+                </div>
+            </div>
+            <div>
+                <label for="">Password:</label>
+                <div>
+                    <input type="password" th:field="*{password}" minlength="6">
+                </div>
+            </div>
+
+            <div>
+                <button id="submit-button" type="submit">Save</button>
+                <button id="cancel-button" type="button" th:onclick="userDetails()">Cancel</button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" th:src="@{/myscript.js}"></script>
+<!-- <script>
+    function cancelForm(){
+        window.location= "[[@{/product}]]";
+    }
+</script> -->
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+body {
+    background-color: red;;
+    background-image: url("background1.png");
+    background-size: 100%;
+}  
+
+.logout-button{
+    position: relative;
+    margin-right: 30px;
+    border-style: groove;
+    border-radius: 10px;
+    margin-left: 90%;
+    color: green;
+    
+  }
+  #main-heading{
+    text-align: center;
+    color:  #E15D44;
+}
+
+form{
+    text-align: center;
+}
+
+#submit-button{
+    position: relative;
+    /* margin-right: 30px; */
+    border-style: groove;
+    border-radius: 10px;
+    /* margin-left: 90%; */
+    color: green;
+    margin: 10px;
+    
+}
+
+#cancel-button{
+    position: relative;
+    /* margin-right: 30px; */
+    border-style: groove;
+    border-radius: 10px;
+    /* margin-left: 90%; */
+    color: green;
+    
+}
+
+#homeButton{
+    position: relative;
+    /* margin-right: 30px; */
+    border-style: groove;
+    border-radius: 10px;
+    /* margin-left: 90%; */
+    color: green;
+    
+  }

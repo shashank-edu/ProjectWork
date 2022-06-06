@@ -1,0 +1,82 @@
+body {
+    /* background-color: lightblue; */
+    background-image: url("background1.png");
+    background-size: 100%;
+    
+  }   
+  
+  
+  .logout-button{
+    position: relative;
+    margin-right: 30px;
+    border-style: groove;
+    border-radius: 10px;
+    margin-left: 90%;
+    color: green;
+    width: 6%;
+    height:30px;
+    
+    
+  }
+#backgroud-image{
+  position: absolute;
+    
+  
+}
+#main-link{
+  position: absolute;
+}
+
+.main-heading{
+  color: white;
+  font-size: 50px;
+  background-color: grey;
+  position: relative;
+  text-align: center;
+  text-decoration:underline;
+  text-shadow: 2px 2px;
+  
+}
+.second-image{
+  width: 30%;
+  position: relative;
+  /* float: right;   */
+  /* margin-top: 150px;
+  margin-right: 100px  ; */
+ /* text-align: center;  */
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+#main-button{
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: absolute;
+  margin-right: 30px;
+  border-style: groove;
+  border-radius: 10px;
+  /* margin-left: 90%; */
+  color: green;
+  width: 10%;
+  height:30px;
+  /* margin-top: 40px; */
+  
+}
+
+.UserButton{
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: relative;
+  /* margin-right: 30px; */
+  border-style: groove;
+  border-radius: 10px;
+  /* margin-left: 90%; */
+  color: green;
+  width: 10%;
+  height:30px;
+  /* margin-top: 30px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

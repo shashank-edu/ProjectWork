@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="/Product-page.css">
+</head>
+
+<body>
+    <div>
+        <h1 id="main-heading">Manage User</h1>
+    </div>
+<div>
+    <!-- <a id="add-product" th:href="@{/product/new}">Add New Product</a> -->
+    <button id="add-product" type="button" th:onclick="addUser()">Add New User</button>
+    <button class="logout-button" type="button" th:onclick="logout()">Logout</button>
+    <button id="homeButton" type="button" onclick="home()">Home</button>
+</div>
+<container>
+    <div id="message-text" th:if="${message}">
+        [[${message}]]
+    </div>
+   
+</container>
+
+    <div >
+        <table>
+            <thead>
+
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <th:block th:each=" obj: ${Listproduct}">
+                    <tr>
+                        <td>[[${obj.userId}]]</td>
+                        <td>[[${obj.username}]]</td>
+                        <td>[[${obj.email}]]</td>
+                        <td>[[${obj.role}]]</td>
+                        
+                        <td>
+                            
+                            <a id="edit-link" th:href="@{'/user/edit/' + ${obj.userId}}">Edit</a>
+                            <a id="delete-link" th:href="@{'/user/delete/' + ${obj.userId}}">Delete</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" th:src="@{/myscript.js}"></script>
+</body>
+
+</html>
