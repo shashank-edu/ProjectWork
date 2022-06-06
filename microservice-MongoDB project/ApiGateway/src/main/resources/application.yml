@@ -1,0 +1,23 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: SellerService
+          uri: lb://SellerService
+          predicates:
+          - Path=/seller/**
+
+        - id: CustomerService
+          uri: lb://CustomerService
+          predicates:
+          - Path=/customer/**
+
+eureka:
+  instance:
+    hostname: localhost
+
